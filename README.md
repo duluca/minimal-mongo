@@ -11,12 +11,23 @@ Dockerfile and scripts to setup a production ready Mongo container
 - *Creates* default admin user, if it doesn't already exist
 - Scripts to deploy this image to your own *AWS ECS* cluster
 
+## Setup
+- Define a `.env` file at the root of the project and set the MongoDB admin passowrd. Do NOT commit this file.
+```Bash
+MONGODB_ADMIN_PASS=your_password_goes_here
+MONGODB_APPLICATION_DATABASE=app_db_name
+MONGODB_APPLICATION_USER=app_user
+MONGODB_APPLICATION_PASS=app_password
+```
+
 ## Quick Start
 - `npm install` to get dependencies
 - `npm run docker:build` to build the Docker image
 - `npm run docker:debug` to build and debug the Docker image
 
 > **Note:** To persist data you must link `/data/db` to a location where the data will persist if this image is stopped. See the `yml` file below as an example.
+
+- Use `npm run docker:runMount` to enable data persistance with this image
 
 ## Sample Usage with docker-compose
 Full source code: https://github.com/excellalabs/minimal-mean

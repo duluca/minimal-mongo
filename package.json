@@ -13,7 +13,9 @@
     "docker:publish": "with-package docker image push pkg.imageRepo",
     "docker:clean": "with-package docker rm -f pkg.imageName || true",
     "docker:taillogs": "with-package docker logs -f pkg.imageName",
-    "docker:debug": "npm run docker:build && npm run docker:run && sleep 1 && npm run docker:taillogs"
+    "docker:debug": "npm run docker:build && npm run docker:run && sleep 1 && npm run docker:taillogs",
+    "docker:runMount": "npm run docker:clean && npm run docker:runHelperMount",
+    "docker:runHelperMount": "with-package docker run -v /tmp/docker-db:/data/db --env-file .env --name pkg.imageName -d -p pkg.imagePort:27017 pkg.imageRepo"
   },
   "repository": {
     "type": "git",
