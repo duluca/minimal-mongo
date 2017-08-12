@@ -51,3 +51,6 @@ services:
       - '/my/own/datadir:/data/db'
 ```
 
+## TODO
+- [ ] Do not run `mongod` as root user
+- [ ] Enabled `SSH` capability
