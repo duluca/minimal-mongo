@@ -1,0 +1,31 @@
+{
+  "name": "mongo-docker",
+  "version": "3.4.7",
+  "description": "Dockerfile and scripts to setup a production ready Mongo container",
+  "imageRepo": "excellalabs/mongo",
+  "imageName": "mongo",
+  "imagePort": "27017",
+  "scripts": {
+    "docker:build": "with-package docker image build . -t pkg.imageRepo:pkg.version && npm run docker:tag",
+    "docker:tag": "with-package docker image tag pkg.imageRepo:pkg.version pkg.imageRepo:latest",
+    "docker:run": "npm run docker:clean && npm run docker:runHelper",
+    "docker:runHelper": "with-package docker run --env-file .env --name pkg.imageName -d -p pkg.imagePort:27017 pkg.imageRepo",
+    "docker:publish": "with-package docker image push pkg.imageRepo",
+    "docker:clean": "with-package docker rm -f pkg.imageName || true",
+    "docker:taillogs": "with-package docker logs -f pkg.imageName",
+    "docker:debug": "npm run docker:build && npm run docker:run && sleep 1 && npm run docker:taillogs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/excellalabs/mongo-docker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/excellalabs/mongo-docker/issues"
+  },
+  "homepage": "https://github.com/excellalabs/mongo-docker#readme",
+  "dependencies": {
+    "with-package": "^0.2.0"
+  }
+}
