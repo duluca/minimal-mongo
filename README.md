@@ -1,5 +1,5 @@
 # Mongo Docker
-Dockerfile and scripts to setup a production ready Mongo container with authentication and SSL configuration
+Dockerfile and scripts to setup a production ready Mongo container with user authentication and SSL configuration
 
 > Inspired by http://blog.bejanalex.com/2017/03/running-mongodb-in-a-docker-container-with-authentication/
 
