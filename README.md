@@ -1,5 +1,5 @@
 # Mongo Docker
-Dockerfile and scripts to setup a production ready Mongo container
+Dockerfile and scripts to setup a production ready Mongo container with authentication and SSL configuration
 
 > Inspired by http://blog.bejanalex.com/2017/03/running-mongodb-in-a-docker-container-with-authentication/
 
@@ -61,6 +61,9 @@ services:
     volumes:
       - '/my/own/datadir:/data/db'
 ```
+
+## Mounting to AWS EFS
+If you're using AWS ECS as your container host, then your data needs to reside on AWS EFS. Setting this up correctly, so you can easily mount your '/data/db' volume to EFS can be complicated. Check out this [step-by-step guide](https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832#file-awc-ecs-access-to-aws-efs-md) that will help you do just that, including how to create an AWS ECS Cluster from scratch.
 
 ## TODO
 - [ ] Do not run `mongod` as root user
