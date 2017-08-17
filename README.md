@@ -67,4 +67,4 @@ If you're using AWS ECS as your container host, then your data needs to reside o
 
 ## TODO
 - [ ] Do not run `mongod` as root user
-- [ ] Enabled `SSH` capability
+- [ ] Enabled `SSH` capability: https://docs.mongodb.com/manual/tutorial/configure-ssl/ and https://medium.com/mongoaudit/how-to-enable-tls-ssl-on-mongodb-d973a92cefa6
