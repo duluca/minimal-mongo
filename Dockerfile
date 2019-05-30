@@ -1,4 +1,4 @@
-FROM mongo:3.4.7
+FROM mongo:4.1
 
 ENV AUTH yes
 ENV STORAGE_ENGINE wiredTiger
