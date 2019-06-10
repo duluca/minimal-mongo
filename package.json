@@ -1,6 +1,6 @@
 {
   "name": "mongo-docker",
-  "version": "4.1.12",
+  "version": "4.1.13",
   "description": "Dockerfile and scripts to setup a production ready Mongo container",
   "config": {
     "imageRepo": "excellalabs/mongo",
@@ -17,7 +17,7 @@
     "postpush-tag": "git push origin master --tags",
     "docker:tag": " cross-conf-env docker image tag $npm_package_config_imageRepo:$npm_package_version $npm_package_config_imageRepo:latest",
     "docker:run": "run-s -c docker:clean docker:runHelper",
-    "docker:runHelper": "cross-conf-env docker run -e NODE_ENV=local --name $npm_package_config_imageName -d -p $npm_package_config_imagePort:$npm_package_config_internalContainerPort $npm_package_config_imageRepo",
+    "docker:runHelper": "cross-conf-env docker run --env-file .env --name $npm_package_config_imageName -d -p $npm_package_config_imagePort:$npm_package_config_internalContainerPort $npm_package_config_imageRepo",
     "predocker:publish": "echo Attention! Ensure `docker login` is correct.",
     "docker:publish": "cross-conf-env docker image push $npm_package_config_imageRepo:$npm_package_version",
     "postdocker:publish": "cross-conf-env docker image push $npm_package_config_imageRepo:latest",

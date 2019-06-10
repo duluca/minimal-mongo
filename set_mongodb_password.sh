@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Admin User
-MONGODB_ADMIN_USER=${MONGODB_ADMIN_USER:-"admin"}
-MONGODB_ADMIN_PASS=${MONGODB_ADMIN_PASS:-""}
+MONGODB_ADMIN_USER=${MONGO_INITDB_ROOT_USERNAME:-"admin"}
+MONGODB_ADMIN_PASS=${MONGO_INITDB_ROOT_PASSWORD:-""}
 
 # Application Database User
 MONGODB_APPLICATION_DATABASE=${MONGODB_APPLICATION_DATABASE:-""}
@@ -17,20 +17,6 @@ while [[ RET -ne 0 ]] ; do
     mongo admin --eval "help" >/dev/null 2>&1
     RET=$?
 done
-
-if [[ $MONGODB_ADMIN_PASS == "" ]] ; then
-  echo "=> You must specifity MONGODB_ADMIN_PASS environment variable in your .env file."
-  exit 1
-fi
-
-# Create the admin user
-echo "=> Creating admin user with a password in MongoDB"
-mongo admin --eval "db.createUser({user: '$MONGODB_ADMIN_USER', pwd: '$MONGODB_ADMIN_PASS', roles:[{role:'root',db:'admin'}]});"
-sleep 3
-
-echo "========================================================================"
-echo "$MONGODB_ADMIN_USER user created! PROTECT the password found in the .env file."
-echo "========================================================================"
 
 if [ "$MONGODB_APPLICATION_DATABASE" != "admin" ]; then
     echo "=> Creating an ${MONGODB_APPLICATION_DATABASE} user with a password in MongoDB"
@@ -49,4 +35,3 @@ fi
 sleep 1
 
 echo "=> Done!"
-touch /data/db/.mongodb_password_set

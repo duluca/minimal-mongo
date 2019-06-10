@@ -1,13 +1,10 @@
 FROM mongo:4.1
 
-ENV AUTH yes
-ENV STORAGE_ENGINE wiredTiger
-ENV JOURNALING yes
+ENV MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+ENV MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
 
-ADD run.sh usr/local/bin/run.sh
-ADD set_mongodb_password.sh usr/local/bin/set_mongodb_password.sh
+ENV MONGODB_APPLICATION_DATABASE=${MONGODB_APPLICATION_DATABASE}
+ENV MONGODB_APPLICATION_USER=${MONGODB_APPLICATION_DATABASE}
+ENV MONGODB_APPLICATION_PASS=${MONGODB_APPLICATION_DATABASE}
 
-RUN ["chmod", "+x", "usr/local/bin/run.sh"]
-RUN ["chmod", "+x", "usr/local/bin/set_mongodb_password.sh"]
-
-CMD ["usr/local/bin/run.sh"]
+ADD set_mongodb_password.sh docker-entrypoint-initdb.d/
