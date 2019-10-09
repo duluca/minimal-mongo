@@ -1,6 +1,6 @@
 {
   "name": "mongo-docker",
-  "version": "4.1.13",
+  "version": "4.2.0",
   "description": "Dockerfile and scripts to setup a production ready Mongo container",
   "config": {
     "imageRepo": "excellalabs/mongo",

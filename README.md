@@ -2,7 +2,7 @@
 
 Dockerfile and scripts to setup a production ready Mongo container with user authentication and SSL configuration
 
-> Example project https://github.com/excellalabs/minimal-mean
+> Example project https://github.com/duluca/minimal-mean
 
 ## Key features:
 
