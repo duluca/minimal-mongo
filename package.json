@@ -9,6 +9,7 @@
     "internalContainerPort": "27017"
   },
   "scripts": {
+    "init:env": "init-dev-env generate-dot-env example.env -f",
     "predocker:build": "npm test",
     "docker:build": "cross-conf-env docker image build . -t $npm_package_config_imageRepo:$npm_package_version",
     "postdocker:build": "npm run docker:tag",
@@ -43,6 +44,7 @@
   "dependencies": {},
   "devDependencies": {
     "cross-conf-env": "^1.1.2",
+    "init-dev-env": "^1.0.0",
     "npm-run-all": "^4.1.5"
   }
 }
