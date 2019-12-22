@@ -35,7 +35,7 @@ MONGODB_APPLICATION_PASS=app_password
 
 ## Sample Usage with docker-compose
 
-Full source code: https://github.com/excellalabs/minimal-mean
+Full source code: https://github.com/duluca/minimal-mean
 
 docker-compose.yml
 
@@ -60,7 +60,7 @@ services:
       - database
 
   database:
-    image: excellalabs/mongo
+    image: duluca/mongo
     env_file: .env
     ports:
       - '27017:27017'

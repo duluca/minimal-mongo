@@ -1,9 +1,9 @@
 {
   "name": "mongo-docker",
-  "version": "4.2.0",
+  "version": "4.2.2",
   "description": "Dockerfile and scripts to setup a production ready Mongo container",
   "config": {
-    "imageRepo": "excellalabs/mongo",
+    "imageRepo": "duluca/mongo",
     "imageName": "mongo",
     "imagePort": "27017",
     "internalContainerPort": "27017"
@@ -33,14 +33,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/excellalabs/mongo-docker.git"
+    "url": "git+https://github.com/duluca/mongo-docker.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/excellalabs/mongo-docker/issues"
+    "url": "https://github.com/duluca/mongo-docker/issues"
   },
-  "homepage": "https://github.com/excellalabs/mongo-docker#readme",
+  "homepage": "https://github.com/duluca/mongo-docker#readme",
   "dependencies": {},
   "devDependencies": {
     "cross-conf-env": "^1.1.2",
