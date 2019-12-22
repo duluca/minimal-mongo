@@ -2,7 +2,7 @@
 
 Dockerfile and scripts to setup a production ready Mongo container with user authentication and SSL configuration
 
-> Example project https://github.com/duluca/minimal-mean
+> Example project https://github.com/duluca/lemon-mart-server
 
 ## Key features:
 
@@ -35,7 +35,7 @@ MONGODB_APPLICATION_PASS=app_password
 
 ## Sample Usage with docker-compose
 
-Full source code: https://github.com/duluca/minimal-mean
+Full source code: https://github.com/duluca/lemon-mart-server
 
 docker-compose.yml
 
@@ -75,5 +75,7 @@ If you're using AWS ECS as your container host, then your data needs to reside o
 ## TODO
 
 * [ ] Enable `SSH` capability: https://docs.mongodb.com/manual/tutorial/configure-ssl/
+* [ ] Switch to Alpine-based OS https://hub.docker.com/r/mvertes/alpine-mongo 
+* [ ] Alpine-only:  For AWS ECS use install  nfs-utils in the container per https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832#gistcomment-3083340
 
 > Inspired by http://blog.bejanalex.com/2017/03/running-mongodb-in-a-docker-container-with-authentication/
