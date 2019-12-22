@@ -3,7 +3,7 @@
   "version": "4.2.2",
   "description": "Dockerfile and scripts to setup a production ready Mongo container",
   "config": {
-    "imageRepo": "duluca/mongo",
+    "imageRepo": "duluca/minimal-mongo",
     "imageName": "mongo",
     "imagePort": "27017",
     "internalContainerPort": "27017"
