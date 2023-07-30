@@ -1,6 +1,6 @@
 {
   "name": "mongo-docker",
-  "version": "4.2.2",
+  "version": "6.0.0",
   "description": "Dockerfile and scripts to setup a production ready Mongo container",
   "config": {
     "imageRepo": "duluca/minimal-mongo",
@@ -9,6 +9,7 @@
     "internalContainerPort": "27017"
   },
   "scripts": {
+    "test": "echo 'No tests yet.'",
     "init:env": "init-dev-env generate-dot-env example.env -f",
     "predocker:build": "npm test",
     "docker:build": "cross-conf-env docker image build . -t $npm_package_config_imageRepo:$npm_package_version",
@@ -43,9 +44,9 @@
   "homepage": "https://github.com/duluca/mongo-docker#readme",
   "dependencies": {},
   "devDependencies": {
-    "cross-conf-env": "^1.1.2",
-    "dev-norms": "^1.7.0",
-    "init-dev-env": "^1.0.0",
+    "cross-conf-env": "^1.3.0",
+    "dev-norms": "^2.0.4",
+    "init-dev-env": "^2.0.0",
     "npm-run-all": "^4.1.5"
   }
 }
