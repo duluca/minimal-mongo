@@ -37,8 +37,8 @@
     "type": "git",
     "url": "git+https://github.com/duluca/mongo-docker.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Doguhan Uluca <duluca@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/duluca/mongo-docker/issues"
   },
