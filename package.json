@@ -1,6 +1,6 @@
 {
   "name": "mongo-docker",
-  "version": "6.0.8",
+  "version": "6.0.11",
   "description": "Dockerfile and scripts to setup a production ready Mongo container",
   "config": {
     "imageRepo": "duluca/minimal-mongo",
