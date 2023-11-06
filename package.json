@@ -12,7 +12,7 @@
     "test": "echo 'No tests yet.'",
     "init:env": "init-dev-env generate-dot-env example.env -f",
     "predocker:build": "npm test",
-    "docker:build": "cross-conf-env docker image build . -t $npm_package_config_imageRepo:$npm_package_version",
+    "docker:build": "cross-conf-env docker image build --platform linux/amd64,linux/arm64 . -t $npm_package_config_imageRepo:$npm_package_version",
     "postdocker:build": "npm run docker:tag",
     "prepush-tag": "cross-conf-env git push origin :refs/tags/$npm_package_version",
     "push-tag": "cross-conf-env git tag -fa $npm_package_version",
